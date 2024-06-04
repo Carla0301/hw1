@@ -1,0 +1,146 @@
+
+.hidden{
+    display:none;
+}
+
+.logo{
+    color:cadetblue;
+    text-align: center;
+    font-family: "Vujahday Script", cursive;
+    font-weight: 1000;
+    font-style: normal;
+    font-size: 23px;
+    margin: 10px 20px;
+}
+
+#nav_div{
+    display: flex;
+    justify-content: space-between; 
+    background: white; 
+
+}
+
+nav{
+    position: fixed;
+    top: 0; 
+    width: 100%; 
+}
+
+#div_flex_items1{
+    display:flex;
+    align-items: center;
+    
+}
+
+.flex_item1{
+    display:block;
+    color:darkslategray;
+    font-size: 17px;
+    padding:5px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+.flex_item1:hover, .flex_item1:active, .link_redirect:hover, .link_redirect:active{
+    color:mediumblue;
+}
+
+body{
+    margin:0;
+}
+
+
+#riga1 {
+    background-color:aliceblue;
+    height: 5px;
+    margin: 0px;
+}
+
+#riga2 {
+    background-color:rgb(209, 231, 250);
+    height: 5px;
+    margin: 0px;
+}
+
+#riga3 {
+    background-color:lightblue;
+    height: 5px;
+    margin: 0px;
+}
+
+#riga4 {
+    background-color:lightskyblue;
+    height: 5px;
+    margin: 0px;
+}
+
+#riga5 {
+    background-color:deepskyblue;
+    height: 5px;
+    margin: 0px;
+}
+
+.menu_tendina{
+    width:auto;
+    height:auto;
+    border: 1px solid darkgrey;
+    border-radius: 2px;
+    position: fixed;
+    top:10%;
+    line-height: 130%;
+    background-color: rgba(240,255,255, 0.95);
+    padding:0.5%;
+    color: darkslategrey;
+    font-size: 1rem;
+}
+
+#blocco_biglietti{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.blocco_viaggio{
+    justify-content: center;
+    background-color: azure;
+    margin: 30px auto;
+    padding: 1em 6em;
+	border: .1em solid gray;
+    border-radius: 4px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+
+}
+
+.blocco_viaggio div{
+    margin: .3em auto;
+}
+
+.bottone{
+    appearance: none;
+	border: .2em solid transparent;
+	background-color: deepskyblue;
+    border-radius: 0.2rem;
+    width:max-content;
+    padding: 5px 10px;
+    margin: 0 3px;
+    color: azure;
+	transition: 0.5s;
+	&:hover, &:focus, &:active {
+		background-color: mediumblue;
+		color: azure;
+	}
+}
+
+h1{
+    text-align: center;
+    color:mediumblue;
+    margin-top: 4.5em;
+}
+
+.testo_redirect{
+    text-align: center;
+    color:darkslategray;
+    font-size: 1.3em;
+}

@@ -1,0 +1,167 @@
+
+.logo{
+    color:cadetblue;
+    padding-right: 500px;
+    text-align: center;
+    font-family: "Vujahday Script", cursive;
+    font-weight: 1000;
+    font-style: normal;
+    font-size: 23px;
+    margin: 20px;  
+}
+
+
+nav{
+    background-color: white;
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+}
+
+#menu_bar{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    height: 60px;
+}
+
+
+#riga1 {
+    background-color:aliceblue;
+    height: 5px;
+    margin: 0px;
+}
+
+#riga2 {
+    background-color:rgb(209, 231, 250);
+    height: 5px;
+    margin: 0px;
+}
+
+#riga3 {
+    background-color:lightblue;
+    height: 5px;
+    margin: 0px;
+}
+
+#riga4 {
+    background-color:lightskyblue;
+    height: 5px;
+    margin: 0px;
+}
+
+#riga5 {
+    background-color:deepskyblue;
+    height: 5px;
+    margin: 0px;
+}
+
+#sezione_signup{
+    padding-top: 100px;
+    text-align: center;
+}
+
+#sezione_signup{
+    padding-top: 100px;
+    text-align: center;
+    background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b532053a-5db2-4653-be43-4c28085afa3f/ddq2jvr-75c27153-a6a9-45c3-9450-e0918e620bfb.jpg/v1/fill/w_1192,h_670,q_70,strp/bus_stop_by_shikihayate_ddq2jvr-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2I1MzIwNTNhLTVkYjItNDY1My1iZTQzLTRjMjgwODVhZmEzZlwvZGRxMmp2ci03NWMyNzE1My1hNmE5LTQ1YzMtOTQ1MC1lMDkxOGU2MjBiZmIuanBnIiwiaGVpZ2h0IjoiPD05MDAiLCJ3aWR0aCI6Ijw9MTYwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS53YXRlcm1hcmsiXSwid21rIjp7InBhdGgiOiJcL3dtXC9iNTMyMDUzYS01ZGIyLTQ2NTMtYmU0My00YzI4MDg1YWZhM2ZcL3NoaWtpaGF5YXRlLTQucG5nIiwib3BhY2l0eSI6OTUsInByb3BvcnRpb25zIjowLjQ1LCJncmF2aXR5IjoiY2VudGVyIn19.F5ymYIXkzH8Z4W88wNpOyacNX8THkT7GHQIfV8db4Ug);
+    height:100vh;
+    width:100vw;
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display:flex;
+    justify-content: center;
+    align-items:flex-start;
+}
+
+
+#sfocatura{
+    text-align: center;
+    width:max-content;
+    height: max-content;
+    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 6px;
+    padding:35px;
+}
+
+body{
+    height:100%;
+    width:100%;
+    overflow: hidden;
+    margin:0;
+}
+
+#signup_testo{
+    color:aliceblue;
+    font-style: oblique;
+}
+
+input[type=text], input[type=password] {
+	appearance: none;
+	border: none;
+	outline: none;
+	border-bottom: .2em solid deepskyblue;
+	background: rgba(deepskyblue, 0.3);
+	border-radius: .2em .2em 0 0;
+	padding: .4em;
+	color: deepskyblue;
+}
+
+input[type=submit] {
+	appearance: none;
+	border: .2em solid deepskyblue;
+	background-color: azure;
+	padding: .85em 1.5em;
+	color: deepskyblue;
+	border-radius: 2em;
+	transition: 0.5s;
+	&:hover, &:focus, &:active {
+		background-color: deepskyblue;
+		color: azure;
+	}
+}
+
+
+input[type=checkbox] {
+    width: 1.15em;
+    height: 1.15em;
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.label_input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0 5px 0;
+}
+
+input {
+    margin-left: 0.5em;
+}
+
+label, #messaggio_finale{
+    color:aliceblue;
+}
+
+.link{
+    color:deepskyblue;
+    text-decoration: none;
+}
+
+.link:hover, .link:active{
+    color:mediumblue;
+}
+
+
+.error{
+    color:red;
+}

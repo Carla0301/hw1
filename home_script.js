@@ -2,17 +2,17 @@
 //torna l'immagine di prima una volta che ci si sposta con il mouse
 
 const mappaViaggiOver={
-    venezia: "https://a.cdn-hotels.com/gdcs/production126/d943/56a06cca-b264-46e6-86eb-d518efd2198f.jpg?impolicy=fcrop&w=800&h=533&q=medium",
-    roma: "https://tourismmedia.italia.it/is/image/mitur/1600X1000_8_cose_imperdibili_natale_di_roma_hero?wid=1080&hei=660&fit=constrain,1&fmt=webp",
-    palermo:"https://a.cdn-hotels.com/gdcs/production63/d1896/79f77da4-aa4b-4915-a74d-6c8f9b652694.jpg",
-    trento:"https://scorcidimondo.it/wp-content/uploads/2021/10/PSX_20211026_175601-scaled.jpg"
+    venezia: "immagini/venezia2.webp",
+    roma: "immagini/roma2.webp",
+    palermo:"immagini/palermo2.avif",
+    trento:"immagini/trento2.jpg"
 }
 
 const mappaViaggiOut={
-    venezia: "https://experience.europlan.it/wp-content/uploads/2019/04/venezia-classica1920x1080.jpg",
-    roma: "https://media.istockphoto.com/id/539115110/it/foto/colosseo-di-roma-e-sole-mattutino-italia.jpg?s=612x612&w=0&k=20&c=ngbBMGVEkJxHsnt4SN7ZuncEnRenq2tFI8V0-zCg4pw=",
-    palermo:"https://civitavecchia.portmobility.it/sites/default/files/palermo_-_la_fontana_pretoria.jpg",
-    trento:"https://www.hotelmontana.it/wp-content/uploads/2019/04/Trento.jpg"
+    venezia: "immagini/venezia1.jpg",
+    roma: "immagini/roma1.jpg",
+    palermo:"immagini/palermo1.jpg",
+    trento:"immagini/trento1.jpg"
 }
 
 
@@ -118,68 +118,6 @@ bottone_trento.addEventListener("click", onClickScopriDiPiu);
 
 
 
-
-
-
-
-
-
-////////////////////////////////////////////////////////
-
-
-// function onJson_meteo(json){
-
-//     console.log("richiesta ricevuta!");
-//     const risultato=json;
-//     console.log(risultato);
-
-
-//     for(let item of risultato.days){
-//         const previsione_giornata=document.createElement("p");
-//         previsione_giornata.textContent=item.datetime+" temperatura: "+item.temp+". "+item.description;
-//         blocco_risultato_meteo.appendChild(previsione_giornata);
-        
-//     }
-
-//     const messaggio_chiusura=document.createElement("p");
-//     messaggio_chiusura.textContent="Fai doppio click per cancellare le previsioni";
-//     blocco_risultato_meteo.appendChild(messaggio_chiusura);
-// }
-
-
-// function onResponse(response){
-//     return response.json();
-// }
-
-
-// function search_meteo(event){
-
-//     event.preventDefault();
-
-//     //seleziono il contenuto di testo inserito
-//     const contenuto=document.querySelector("#content").value;
-
-//     //verifico che sia stato inserito effettivamente del testo
-//     if(contenuto){
-//         const localita = encodeURIComponent(contenuto);
-//         meteo_request=meteo_endpoint+localita+"/?key="+key_meteo+"&lang=it"+"&unitGroup=metric";
-//         fetch(meteo_request).then(onResponse).then(onJson_meteo);
-//     }else alert("inserisci una località");
-// }
-
-
-// const form_meteo=document.querySelector("#search_content");
-// form_meteo.addEventListener("submit", search_meteo);
-
-
-// const key_meteo="98PN893CB5TC5MNASCALHZULR"
-// const meteo_endpoint="https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/"
-
-
-// const blocco_risultato_meteo=document.querySelector("#results_meteo");
-
-// blocco_risultato_meteo.addEventListener('dblclick', chiudiRisultati);
-
 //////////////////////////////////////////
 
 //per chiudere i risultati delle api
@@ -198,13 +136,6 @@ function onJsonMeteo(json){
     console.log(risultato);
 
 
-    // for(let item of risultato.days){
-    //     const previsione_giornata=document.createElement("div");
-    //     previsione_giornata.textContent="Nella giornata del "+item.datetime+" ci sarà una temperatura di "+item.temp+" °C. "+item.description;
-    //     blocco_risultato_meteo.appendChild(previsione_giornata);
-    //     previsione_giornata.classList.add("previsioni");
-        
-    // }
 
     if(risultato.days.length>7){
 

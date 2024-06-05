@@ -146,7 +146,7 @@
         data-abitanti="250.073 di abitanti, " 
         data-turismo="23 milioni di turisti all'anno, "
         data-grandezza="414,6 km² di estensione">
-            <img id="img_venezia" src="https://experience.europlan.it/wp-content/uploads/2019/04/venezia-classica1920x1080.jpg" alt="foto_canale">
+            <img id="img_venezia" src="immagini/venezia1.jpg" alt="foto_canale">
             <h1>VENEZIA</h1>
             <p>
                 Non perdere tempo, cogli al balzo l'occasione di visitare Venezia e i suoi canali.<br>
@@ -160,7 +160,7 @@
         data-abitanti="2.751.125 di abitanti, " 
         data-turismo="49 milioni di turisti all'anno, "
         data-grandezza="1285 km² di estensione">
-            <img id="img_roma" src="https://media.istockphoto.com/id/539115110/it/foto/colosseo-di-roma-e-sole-mattutino-italia.jpg?s=612x612&w=0&k=20&c=ngbBMGVEkJxHsnt4SN7ZuncEnRenq2tFI8V0-zCg4pw=" alt="foto_colosseo">
+            <img id="img_roma" src="immagini/roma1.jpg" alt="foto_colosseo">
             <h1>ROMA</h1>
             <p>
                 Cogli l'occasione per andare a Roma in bus con noi e scoprire tutti i segreti della nostra bellissima capitale.<br>
@@ -174,7 +174,7 @@
         data-abitanti="673.735 di abitanti, " 
         data-turismo="722.288 di turisti all'anno, "
         data-grandezza="158,9 km² di estensione">
-            <img id="img_palermo" src="https://civitavecchia.portmobility.it/sites/default/files/palermo_-_la_fontana_pretoria.jpg" alt="foto_fontanta">
+            <img id="img_palermo" src="immagini/palermo1.jpg" alt="foto_fontanta">
             <h1>PALERMO</h1>
             <p>
                 Palermo è una delle città più visitate della Sicilia, un luogo ricco di storia e di arte, ma anche di tradizioni.<br>
@@ -188,7 +188,7 @@
         data-abitanti="117.417 di abitanti, " 
         data-turismo="5,7 milioni di turisti all'anno, "
         data-grandezza="157,9 km² di estensione">
-            <img id="img_trento" src="https://www.hotelmontana.it/wp-content/uploads/2019/04/Trento.jpg" alt="foto_montagne">
+            <img id="img_trento" src="immagini/trento1.jpg" alt="foto_montagne">
             <h1>TRENTO</h1>
             <p>
                 Lasciati sedurre dal Trentino-Alto Adige e da una delle zone più belle del nord Italia.<br>
@@ -248,47 +248,47 @@
     <section id="flex_servizi">
 
         <div class="item_servizi">
-            <img src="https://img.freepik.com/premium-vector/wi-fi-wireless-technology-symbol-wifi-pictogram_532867-431.jpg" alt="simbolo_wifi">
+            <img src="immagini/wifi_logo.avif" alt="simbolo_wifi">
             <p>WIFI GRATUITO</p>
         </div>
 
         <div class="item_servizi">
-            <img src="https://static.vecteezy.com/ti/vettori-gratis/p3/22245958-pianeta-terra-icona-con-foglia-proteggere-esso-salva-il-mondo-eco-friendly-simbolo-proteggere-il-ambiente-vettoriale.jpg" alt="simbolo_eco">
+            <img src="immagini/eco_friendly_logo.jpg" alt="simbolo_eco">
             <p>ECO FRIENDLY</p>
         </div>
 
         <div class="item_servizi">
-            <img src="https://www.adesivocrea.it/images/virtuemart/product/al0018.jpg" alt="simbolo_toilette">
+            <img src="immagini/toilette_logo.jpg" alt="simbolo_toilette">
             <p>TOILETTE</p>
         </div>
 
         <div class="item_servizi">
-            <img src="https://img.freepik.com/premium-vector/briefcase-icon-suitcase-symbol_260216-369.jpg" alt="simbolo_cappelliera">
+            <img src="immagini/cappelliere_logo.avif" alt="simbolo_cappelliera">
             <p>CAPPELLIERA</p>
         </div>
 
         <div class="item_servizi">
-            <img src="https://img.freepik.com/premium-vector/electric-plug-power-cabel-icon-symbol-from-blue-icon-set_840036-51.jpg" alt="simbolo_presa_elettrica">
+            <img src="immagini/prese_logo.avif" alt="simbolo_presa_elettrica">
             <p>PRESE ELETTRICHE</p>
         </div>
 
         <div class="item_servizi">
-            <img src="https://static.vecteezy.com/ti/vettori-gratis/p3/15485060-poltrona-pixel-perfetto-pendenza-lineare-ui-icona-hotel-camera-disposizione-motel-servizio-linea-colore-utente-interfaccia-simbolo-moderno-stile-pittogramma-vettore-isolato-schema-illustrazione-vettoriale.jpg" alt="simbolo_sedile">
+            <img src="immagini/sedili_logo.jpg" alt="simbolo_sedile">
             <p>SEDILI RECLINABILI</p>
         </div>
 
     </section>
 
     <section id="app">
-        <img src="https://www.mooneygo.it/wp-content/uploads/2022/10/App-MooneyGo-dettaglio-percorso-trasporto-pubblico_aggiornata.png" alt="simbolo_app">
+        <img src="immagini/telefono.png" alt="simbolo_app">
         <p>LA NUOVA APP<br>
             Scarica la nostra app per rimanere sempre aggiornato
         <div id="flex_loghi">
             <div class="items_loghi">
-                <img src="https://cdn.icon-icons.com/icons2/2235/PNG/512/apple_os_logo_icon_134677.png" alt="mela">
+                <img src="immagini/apple_logo.png" alt="mela">
             </div>
             <div class="items_loghi">
-                <img src="https://www.zeusnews.it/img/9/5/9/9/1/0/019959-470-android1.jpg" alt="android">
+                <img src="immagini/android_logo.jpg" alt="android">
             </div>
         </div>
         </p>
@@ -325,8 +325,8 @@
         </div>
         <div class="items_footer_banda1">
             <h1>App disponibile in</h1>
-            <img src="https://cdn.icon-icons.com/icons2/2235/PNG/512/apple_os_logo_icon_134677.png" alt="mela">
-            <img src="https://www.zeusnews.it/img/9/5/9/9/1/0/019959-470-android1.jpg" alt="android">
+            <img src="immagini/apple_logo.png" alt="mela">
+            <img src="immagini/android_logo.jpg" alt="android">
         </div>
     </section>
 

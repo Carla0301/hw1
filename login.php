@@ -100,7 +100,7 @@
         </form>
 
         <div id="messaggio_finale">
-            <p>Non hai ancora un account?<br><a class="link" href="signup.php">Iscriviti</a></p>
+            <p>Non hai ancora un account?<br><a class="link" href="signup.php">Registrati</a></p>
         </div>
         </div>
     </section>  

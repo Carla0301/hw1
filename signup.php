@@ -126,7 +126,7 @@
     <section id="sezione_signup">
     <div id="sfocatura">
 
-        <h1 id="signup_testo">Iscriviti</h1>
+        <h1 id="signup_testo">Registrati</h1>
 
         <form name="signup" method="post">
 

@@ -14,6 +14,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vujahday+Script&display=swap" rel="stylesheet">
     <script src="carrello_script.js" defer="true"></script>
     <link rel="stylesheet" href="carrello_style.css">
     <title>Carrello</title>
@@ -30,7 +33,7 @@
     <a class="flex_item1" href="home.php" >Home</a>
     <a class="flex_item1" href="login.php">Login</a>
     <a class="flex_item1" href="signup.php">Registrati</a>
-    <a class="flex_item1" href="logout.php">Logout</a>
+    <a class="flex_item1_da_tenere" href="logout.php">Logout</a>
     <a class="flex_item1" href="https://github.com/Carla0301" >CARLA</a>
     <div id="contatti">
             <a class="flex_item1" href="">Contatti</a>
@@ -52,7 +55,6 @@
 
         </div>
     </div>
-    <a class="flex_item1" href="carrello.php">Carrello</a>
     <a class="flex_item1">IT</a>
     </div>
     

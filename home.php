@@ -1,6 +1,5 @@
 <?php
 
-    //controllo se l'utente e' loggato
     require_once "auth.php";
 
     if(!$userid=isSession()){
@@ -20,31 +19,6 @@
     $riga_user = mysqli_fetch_assoc($ris);  
 
 
-    // //codice php per il form viaggi
-    // //controllo se i campi sono stati compilati
-    // if(!empty($_POST["partenza"]) && !empty($_POST["destinazione"])){
-
-    //     //non apro la connessione, perche' l'ho lasciata aperta nelle righe piu' su
-    //     $partenza=mysqli_real_escape_string($conn, $_POST["partenza"]);
-    //     $destinazione=mysqli_real_escape_string($conn, $_POST["destinazione"]);
-
-    //     $query="SELECT* FROM viaggi WHERE partenza= '$partenza' AND destinazione='$destinazione'";
-
-    //     $ris=mysqli_query($conn, $query) or die(mysqli_error($conn));
-
-    //     //se ci sono risultati mando alla pagina dei risultati
-    //     if(mysqli_num_rows($ris)>0){
-            
-    //         header("Location: risultati_viaggi.php");
-    //         mysqli_free_result($ris);
-    //         mysqli_close($conn);
-    //         exit;
-
-    //     } else $errore="Non ci sono viaggi con i parametri selezionati";
-
-    // } else if (isset($_POST["partenza"]) || isset($_POST["destinazione"])){
-    //     $errore="Tutti i campi devono essere compilati";
-    // }
 
 ?>
 
@@ -75,7 +49,7 @@
         <a class="flex_item1" href="home.php" >Home</a>
         <a class="flex_item1" href="login.php">Login</a>
         <a class="flex_item1" href="signup.php">Registrati</a>
-        <a class="flex_item1" href="logout.php">Logout</a>
+        <a class="flex_item1_da_tenere" href="logout.php">Logout</a>
         <a class="flex_item1" href="https://github.com/Carla0301" >CARLA</a>
         <div id="contatti">
                 <a class="flex_item1" href="">Contatti</a>
@@ -97,7 +71,7 @@
 
             </div>
         </div>
-        <a class="flex_item1" href="carrello.php">Carrello</a>
+        <a class="flex_item1_da_tenere" href="carrello.php">Carrello</a>
         <a class="flex_item1">IT</a>
         </div>
 </div>
@@ -260,13 +234,7 @@
 
             <label class="label_api">Cerca: <input class="input_api" type="text" name="input_musica"></label>
 
-            <!-- <select name = 'tipo' id='tipo'>
-				<option value='album'>Album</option>
-				<option value='artist'>Artista</option>
-				<option value='track'>Brano</option>
-			</select> -->
-
-            <input class="submit" name="submit" type="submit">
+            <input class="submit" id="submit_meteo" name="submit" type="submit">
 
         </form>
     
@@ -340,11 +308,11 @@
         <div class="items_footer_banda1">
             <h1>Informazioni Utili</h1>
             <p>
-                <a class="link_footer1" href="https://www.saistrasporti.it/servizi-online">Avvisi e news</a><br>
-                <a class="link_footer1" href="https://www.saistrasporti.it/infos/it/azienda">Azienda</a><br>
-                <a class="link_footer1" href="https://www.saistrasporti.it/bandi-e-gare">Bandi e Gare</a><br>
-                <a class="link_footer1" href="https://saistrasporti.it/Media/SaisTrasporti/Documenti/CONDIZIONI%20DI%20ACQUISTO%20U[1].pdf">Condizioni di Acquisto</a><br>
-                <a class="link_footer1" href="https://saistrasporti.it/Media/SaisTrasporti/Documenti/Carta%20Mobilit%C3%A0%20SAIS%202023%20uu.pdf">Carte della Mobilità</a><br>
+                <span class="footer_testo">Avvisi e news</span><br>
+                <span class="footer_testo">Azienda</span><br>
+                <span class="footer_testo">Bandi e Gare</span><br>
+                <span class="footer_testo">Condizioni di Acquisto</span><br>
+                <span class="footer_testo">Carte della Mobilità</span><br>
             </p>
         </div>
         <div class="items_footer_banda1">
@@ -352,7 +320,6 @@
             <p>
                 cmasca02@gmail.com<br>
                 1234567890 (call center)<br>
-                Per info su orari degli autobus contattare le biglietterie cliccando <a href="https://www.saistrasporti.it/biglietterie">QUI</a><br>
                 
             </p>
         </div>
@@ -367,18 +334,18 @@
 
     <section id="footer_banda2">
         <div class="items_footer_banda2">
-            <a class="link_footer2" href="https://www.templetourbusagrigento.com/">TEMPLE RUN BUS</a>
+            <span class="footer_testo">TEMPLE RUN BUS</span>
         </div>
         <div class="items_footer_banda2">
-            <a class="link_footer2" href="https://www.autolineegiamporcaro.it/">GIAMPORCHETTA</a>
+            <span class="footer_testo">GIAMPORCHETTA</span>
         </div>
         <div class="items_footer_banda2">
-            <a class="link_footer2" href="https://www.autolineegallo.it/">AUTOLINEE GALLINA</a>
+            <span class="footer_testo">AUTOLINEE GALLINA</span>
         </div>
     </section>
     <p id="copyright">
         Copyright © 2024 CARLA Trasporti<br>
-         All rights reserved <a id="privacy" href="https://www.saistrasporti.it/privacy">Privacy</a><br>
+         All rights reserved <br>Privacy<br>
         Ogni riferimento a fatti, persone o siti realmente esistenti è puramente voluto
     </p>
   </footer>

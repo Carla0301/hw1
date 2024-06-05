@@ -15,7 +15,7 @@
     $ris=mysqli_query($conn, $query) or die(mysqli_error($conn));
         
     if(mysqli_num_rows($ris)==0){
-        echo json_encode("errore");
+        echo json_encode(array('ok' => 'false', 'userid' => $userid));
         mysqli_free_result($ris);
         mysqli_close($conn);
         exit;

@@ -119,88 +119,167 @@ bottone_trento.addEventListener("click", onClickScopriDiPiu);
 
 
 
-//api meteo
 
 
-// function chiudiMeteo(event){
-//     if(event.key==="Escape"){
-//         const blocco_risultato=document.querySelector("#results_meteo");
-//         blocco_risultato.innerHTML="";
-//         // const testo_barra_input=document.querySelector("#content");
-//         // console.log(testo_barra_input)
-//         // testo_barra_input.innerHTML="";
-//         //non funonzia
+
+
+
+////////////////////////////////////////////////////////
+
+
+// function onJson_meteo(json){
+
+//     console.log("richiesta ricevuta!");
+//     const risultato=json;
+//     console.log(risultato);
+
+
+//     for(let item of risultato.days){
+//         const previsione_giornata=document.createElement("p");
+//         previsione_giornata.textContent=item.datetime+" temperatura: "+item.temp+". "+item.description;
+//         blocco_risultato_meteo.appendChild(previsione_giornata);
+        
 //     }
+
+//     const messaggio_chiusura=document.createElement("p");
+//     messaggio_chiusura.textContent="Fai doppio click per cancellare le previsioni";
+//     blocco_risultato_meteo.appendChild(messaggio_chiusura);
 // }
+
+
+// function onResponse(response){
+//     return response.json();
+// }
+
+
+// function search_meteo(event){
+
+//     event.preventDefault();
+
+//     //seleziono il contenuto di testo inserito
+//     const contenuto=document.querySelector("#content").value;
+
+//     //verifico che sia stato inserito effettivamente del testo
+//     if(contenuto){
+//         const localita = encodeURIComponent(contenuto);
+//         meteo_request=meteo_endpoint+localita+"/?key="+key_meteo+"&lang=it"+"&unitGroup=metric";
+//         fetch(meteo_request).then(onResponse).then(onJson_meteo);
+//     }else alert("inserisci una località");
+// }
+
+
+// const form_meteo=document.querySelector("#search_content");
+// form_meteo.addEventListener("submit", search_meteo);
+
+
+// const key_meteo="98PN893CB5TC5MNASCALHZULR"
+// const meteo_endpoint="https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/"
+
+
+// const blocco_risultato_meteo=document.querySelector("#results_meteo");
+
+// blocco_risultato_meteo.addEventListener('dblclick', chiudiRisultati);
+
+//////////////////////////////////////////
 
 //per chiudere i risultati delle api
 function chiudiRisultati(event){
     
-        const blocco_risultato=event.currentTarget;
-        // console.log(event.currentTarget)
-        blocco_risultato.innerHTML="";
-    
+    const blocco_risultato=event.currentTarget;
+    blocco_risultato.innerHTML="";
+
 }
 
-function onJson_meteo(json){
+
+function onJsonMeteo(json){
 
     console.log("richiesta ricevuta!");
     const risultato=json;
     console.log(risultato);
 
 
-    for(let item of risultato.days){
-        const previsione_giornata=document.createElement("p");
-        previsione_giornata.textContent=item.datetime+" temperatura: "+item.temp+". "+item.description;
-        blocco_risultato_meteo.appendChild(previsione_giornata);
+    // for(let item of risultato.days){
+    //     const previsione_giornata=document.createElement("div");
+    //     previsione_giornata.textContent="Nella giornata del "+item.datetime+" ci sarà una temperatura di "+item.temp+" °C. "+item.description;
+    //     blocco_risultato_meteo.appendChild(previsione_giornata);
+    //     previsione_giornata.classList.add("previsioni");
         
+    // }
+
+    if(risultato.days.length>7){
+
+        for(let i=0; i<7;i++){
+            const previsione_giornata=document.createElement("div");
+            previsione_giornata.textContent="Nella giornata del "+risultato.days[i].datetime+" ci sarà una temperatura di "+risultato.days[i].temp+" °C. "+risultato.days[i].description;
+            blocco_risultato_meteo.appendChild(previsione_giornata);
+            previsione_giornata.classList.add("previsioni");
+        }
+    } else{
+        for(let item of risultato.days){
+        const previsione_giornata=document.createElement("div");
+        previsione_giornata.textContent="Nella giornata del "+item.datetime+" ci sarà una temperatura di "+item.temp+" °C. "+item.description;
+        blocco_risultato_meteo.appendChild(previsione_giornata);
+        previsione_giornata.classList.add("previsioni");
+        
+        }
     }
 
-    const messaggio_chiusura=document.createElement("p");
+    const messaggio_chiusura=document.createElement("div");
     messaggio_chiusura.textContent="Fai doppio click per cancellare le previsioni";
     blocco_risultato_meteo.appendChild(messaggio_chiusura);
+    messaggio_chiusura.classList.add("previsioni");
 }
 
 
-function onResponse(response){
+function onResponseMeteo(response){
+    console.log(response)
     return response.json();
 }
 
 
-function search_meteo(event){
-
+function searchMeteo(event){
     event.preventDefault();
 
+    blocco_risultato_meteo.innerHTML="";
+
     //seleziono il contenuto di testo inserito
-    const contenuto=document.querySelector("#content").value;
+    const contenuto=document.querySelector("#input_meteo").value;
 
     //verifico che sia stato inserito effettivamente del testo
     if(contenuto){
-        const localita = encodeURIComponent(contenuto);
-        meteo_request=meteo_endpoint+localita+"/?key="+key_meteo+"&lang=it"+"&unitGroup=metric";
-        fetch(meteo_request).then(onResponse).then(onJson_meteo);
-    }else alert("inserisci una località");
+        const form_data = new FormData();
+        form_data.append('localita', encodeURIComponent(contenuto));
+        fetch("fetch_meteo.php", {method: 'post', body: form_data}).then(onResponseMeteo).then(onJsonMeteo);
+
+    } else{
+        const errore=document.createElement("p");
+        errore.classList.add("errore");
+        errore.textContent="Compila tutti i campi";
+        blocco_risultato_meteo.appendChild(errore);
+    }
 }
 
 
-const form_meteo=document.querySelector("#search_content");
-form_meteo.addEventListener("submit", search_meteo);
 
 
-const key_meteo="98PN893CB5TC5MNASCALHZULR"
-const meteo_endpoint="https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/"
 
+
+const form_meteo=document.querySelector("#form_meteo");
+form_meteo.addEventListener("submit", searchMeteo);
 
 const blocco_risultato_meteo=document.querySelector("#results_meteo");
-
 blocco_risultato_meteo.addEventListener('dblclick', chiudiRisultati);
+
+
+
+///////////////////////////////////////////
 
 
 //spotify con server
 function jsonSpotify(json) {
 
     console.log(json);
-    const container = document.getElementById('results_spotify');
+    const container = document.querySelector("#results_spotify");
     container.innerHTML = '';
     if (!json.tracks.items.length) {
         console.log("no results") 
@@ -219,17 +298,25 @@ function jsonSpotify(json) {
 
         const trackInfo = document.createElement('div');
         card.appendChild(trackInfo);
+        trackInfo.classList.add('trackInfo');
+
+
 
         const img = document.createElement('img');
         img.src = json.tracks.items[track].album.images[0].url;
         trackInfo.appendChild(img);
 
 
+
         const infoContainer = document.createElement('div');
         trackInfo.appendChild(infoContainer);
+        infoContainer.classList.add("infoContainer");
+
 
         const info = document.createElement('div');
         infoContainer.appendChild(info);
+        info.classList.add("info");
+
 
         const name = document.createElement('strong');
         name.innerHTML = json.tracks.items[track].name+"<br>";
@@ -240,14 +327,13 @@ function jsonSpotify(json) {
         info.appendChild(artist);
 
 
-        // info sulle canzoni quando selected
+        // info sulle canzoni 
         const canzoneInfo= document.createElement('div');
-        const popularity = document.createElement('p');
-        popularity.innerHTML = 'Popolarità: '+json.tracks.items[track].popularity;
-        canzoneInfo.appendChild(popularity);
+
         const date = document.createElement('p');
         date.innerHTML = 'Data di pubblicazione: '+json.tracks.items[track].album.release_date;
         canzoneInfo.appendChild(date);
+
         const duration = document.createElement('p');
         const durationMs = json.tracks.items[track].duration_ms;
         const durationMin  = durationMs / 1000 / 60;
@@ -256,6 +342,7 @@ function jsonSpotify(json) {
         const decimalPartRounded =  Math.floor(decimalPart * 100) / 100;
         const trackSec = parseInt((decimalPartRounded * 60), 10);
         duration.innerHTML = "Durata: "+intPart+" min "+trackSec+" sec";
+
         canzoneInfo.appendChild(duration);
         card.appendChild(canzoneInfo);
 
@@ -280,8 +367,134 @@ document.querySelector("#search_music").addEventListener("submit", search_music)
 
 
 
+//////////////////////////////////////////////////////
+//fetch viaggi
+
+
+function onRisposta(response) {
+
+    console.log(response);
+    return response.json().then(databaseResponse); 
+  }
+  
+  function onError(error) { 
+    console.log("Errore");
+  }
+  
+  function databaseResponse(json) {
+    if (!json.ok) {
+        onError();
+        return null;
+    }
+  }
+
+
+function aggiungiAlCarrello(event){
+    const viaggio=event.currentTarget.parentNode;
+
+    console.log("mi hai cliccato!!!");
+    //creo il form da inviare al server
+    const form_carrello= new FormData();
+    form_carrello.append('id_viaggio', viaggio.dataset.id);
+    form_carrello.append('partenza', viaggio.dataset.partenza);
+    form_carrello.append('destinazione', viaggio.dataset.destinazione);
+    form_carrello.append('ora_partenza', viaggio.dataset.orario_partenza);
+    form_carrello.append('ora_arrivo', viaggio.dataset.orario_arrivo);
+    form_carrello.append('costo', viaggio.dataset.prezzo);
+    fetch("fetch_aggiungi_al_carrello.php", {method: 'post', body: form_carrello}).then(onRisposta, onError);
+    event.stopPropagation();
+}
 
 
 
 
+function onJsonViaggi(json){
 
+    console.log("faccio la fetch");
+    console.log(json);
+    const risultato=json;
+
+    if(risultato.ok==="false"){
+        const titolo_noresults=document.createElement("h1");
+        titolo_noresults.textContent="Non ci sono viaggi con quei parametri!";
+        titolo_noresults.classList.add("errore");
+        blocco_risultati_viaggi.appendChild(titolo_noresults);
+        return;
+    }else {
+
+        const titolo_risultati=document.createElement("h1");
+        blocco_risultati_viaggi.appendChild(titolo_risultati);
+
+    for(let item of risultato){
+
+        const blocco_viaggio=document.createElement("div");
+
+        const partenza_destinazione=document.createElement("div");
+        partenza_destinazione.textContent=item.partenza+" - "+item.destinazione;
+        const orario=document.createElement("div");
+        orario.textContent="Orario: "+item.ora_partenza+" - "+item.ora_arrivo;
+        const prezzo=document.createElement("div");
+        prezzo.textContent="Prezzo: "+item.costo+" euro";
+
+
+        blocco_viaggio.appendChild(partenza_destinazione);
+        blocco_viaggio.appendChild(orario);
+        blocco_viaggio.appendChild(prezzo);
+        blocco_viaggio.classList.add("blocco_viaggio");
+
+        //mi serviranno poi nella aggiungiAlCarrello per fare poi il form ed inserire i dati giusti nel database
+        blocco_viaggio.dataset.id=item.id;
+        blocco_viaggio.dataset.partenza=item.partenza;
+        blocco_viaggio.dataset.destinazione=item.destinazione;
+        blocco_viaggio.dataset.orario_partenza=item.ora_partenza;
+        blocco_viaggio.dataset.orario_arrivo=item.ora_arrivo;
+        blocco_viaggio.dataset.prezzo=item.costo;
+
+
+
+        const bottone=document.createElement("button");
+        bottone.textContent="Aggiungi questo viaggio al tuo carrello";
+        bottone.addEventListener("click", aggiungiAlCarrello);
+        blocco_viaggio.appendChild(bottone);
+        bottone.classList.add("bottone");
+
+
+        blocco_risultati_viaggi.appendChild(blocco_viaggio);
+    }
+    }
+
+}
+
+function onResponse(response) {
+    console.log(response);
+    return response.json();
+}
+
+function fetchViaggi(event){
+
+    blocco_risultati_viaggi.innerHTML="";
+
+    event.preventDefault();
+
+    if(partenza.value.length!=0 && destinazione.value.length!=0){
+    
+    console.log(partenza.value.length)
+
+    const form_data = new FormData();
+    form_data.append('partenza', partenza.value);
+    form_data.append('destinazione', destinazione.value);
+
+    fetch("fetch_viaggi.php", {method: 'post', body: form_data}).then(onResponse).then(onJsonViaggi);
+    } else{
+        const errore=document.createElement("p");
+        errore.classList.add("errore");
+        errore.textContent="Compila tutti i campi";
+        blocco_risultati_viaggi.appendChild(errore);
+    }
+}
+
+const form_viaggi=document.querySelector("#form_viaggio");
+form_viaggi.addEventListener("submit", fetchViaggi);
+const partenza=document.querySelector("#input_partenza");
+const destinazione=document.querySelector("#input_destinazione");
+const blocco_risultati_viaggi=document.querySelector("#risultati_viaggi");

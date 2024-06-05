@@ -70,7 +70,6 @@
 
 </nav>
 
-    <h1>Ecco il tuo carrello</h1>
     <div id="blocco_biglietti"></div>
     <p class="testo_redirect">Torna alla <a class="link_redirect" href="home.php">home</a></p>
 

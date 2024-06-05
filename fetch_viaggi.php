@@ -14,24 +14,27 @@
         $partenza=$_POST['partenza'];
         $destinazione=$_POST['destinazione'];
 
+        $partenza=mysqli_real_escape_string($conn, $partenza);
+        $destinazione=mysqli_real_escape_string($conn, $destinazione);
+
     
         $query = "SELECT* from viaggi where partenza='$partenza' and destinazione='$destinazione'";
     
         $ris=mysqli_query($conn, $query) or die(mysqli_error($conn));
         
         if(mysqli_num_rows($ris)==0){
-            echo json_encode("errore");
+            echo json_encode(array('ok' => 'false', 'partenza' => $partenza, 'destinazione' => $destinazione));
             mysqli_free_result($ris);
             mysqli_close($conn);
             exit;
         }
         $array_viaggi = array();
         while($riga = mysqli_fetch_assoc($ris)) {
-            $array_viaggi[] =array('id' => $riga['id'],
+            $array_viaggi[] =array('ok' => 'true',
+                            'id' => $riga['id'],
                             'partenza' => $riga['partenza'],
                             'destinazione' => $riga['destinazione'],
                             'costo' => $riga['costo'],
-                            // 'data_partenza' => $riga['data_partenza']
                             'ora_partenza' => $riga['ora_partenza'],
                             'ora_arrivo' => $riga['ora_arrivo']);
         }

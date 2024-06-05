@@ -152,9 +152,9 @@ header{
 #viaggia_con_noi{
     background-color: lightskyblue;
     border-radius: 3px;
-    margin:-90px 160px;
+    margin:-100px 160px 0 160px;
     z-index: 1;
-    height: 620px;
+    height: fit-content;
 }
 
 @media(max-width:500px){
@@ -231,7 +231,7 @@ header{
     color: mediumblue;
     font-size: 30px;
     padding: 10px;
-    margin:10px 250px;
+    margin:7px 250px;
 }
 
 
@@ -635,6 +635,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 2em;
 }
 
 .sezione_api{
@@ -644,4 +645,90 @@ body{
 .errore{
     color:red;
     text-align: center;
+    font-size: 1.5em;
+}
+
+.blocchi_spotify{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center
+}
+
+
+
+.trackInfo{
+    display: flex;
+    flex-direction: column;
+}
+
+.infoContainer{
+width: 100%;
+display: flex;
+flex-direction: row;
+}
+
+.info{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: 230px;
+}
+
+#risultati_viaggi{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.blocco_viaggio{
+    justify-content: center;
+    background-color: azure;
+    margin: 30px auto;
+    padding: 1em 6em;
+	border: .1em solid gray;
+    border-radius: 4px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+
+}
+
+.blocco_viaggio div{
+    margin: .3em auto;
+}
+
+.bottone{
+    appearance: none;
+	border: .2em solid transparent;
+	background-color: deepskyblue;
+    border-radius: 0.2rem;
+    width:max-content;
+    padding: 5px 10px;
+    margin: 0 3px;
+    color: azure;
+	transition: 0.5s;
+	&:hover, &:focus, &:active {
+		background-color: mediumblue;
+		color: azure;
+	}
+}
+
+.previsioni{
+    text-align: center;
+    background-color: inherit;
+    margin: 20px auto;
+    padding: 1em 6em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    color:mediumblue;
+}
+
+.results_meteo{
+    
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

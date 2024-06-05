@@ -59,6 +59,19 @@ function onJsonCarrello(json){
     const risultato=json;
     const blocco_ris=document.querySelector("#blocco_biglietti");
 
+
+
+    if(risultato.ok==="false"){
+      const titolo_noresults=document.createElement("h1");
+      titolo_noresults.textContent="Non hai ancora aggiunto viaggi!";
+      titolo_noresults.classList.add("titolo_viaggi");
+      blocco_ris.appendChild(titolo_noresults);
+      return;
+    }else {
+      const titolo_ris=document.createElement("h1");
+      titolo_ris.textContent="Ecco il tuo carrello";
+      titolo_ris.classList.add("titolo_viaggi");
+      blocco_ris.appendChild(titolo_ris);
     
     for(let item of risultato){
 
@@ -91,6 +104,7 @@ function onJsonCarrello(json){
 
         blocco_ris.appendChild(blocco_viaggio);
     }
+  }
 }
 
 function onResponse(response) {

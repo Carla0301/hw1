@@ -20,32 +20,31 @@
     $riga_user = mysqli_fetch_assoc($ris);  
 
 
-    //codice php per il form viaggi
-    //controllo se i campi sono stati compilati
-    if(!empty($_POST["partenza"]) && !empty($_POST["destinazione"])){
+    // //codice php per il form viaggi
+    // //controllo se i campi sono stati compilati
+    // if(!empty($_POST["partenza"]) && !empty($_POST["destinazione"])){
 
-        //non apro la connessione, perche' l'ho lasciata aperta nelle righe piu' su
-        $partenza=mysqli_real_escape_string($conn, $_POST["partenza"]);
-        $destinazione=mysqli_real_escape_string($conn, $_POST["destinazione"]);
-        // $data_partenza=mysqli_real_escape_string($conn, $_POST["data_partenza"]);
+    //     //non apro la connessione, perche' l'ho lasciata aperta nelle righe piu' su
+    //     $partenza=mysqli_real_escape_string($conn, $_POST["partenza"]);
+    //     $destinazione=mysqli_real_escape_string($conn, $_POST["destinazione"]);
 
-        $query="SELECT* FROM viaggi WHERE partenza= '$partenza' AND destinazione='$destinazione'";
+    //     $query="SELECT* FROM viaggi WHERE partenza= '$partenza' AND destinazione='$destinazione'";
 
-        $ris=mysqli_query($conn, $query) or die(mysqli_error($conn));
+    //     $ris=mysqli_query($conn, $query) or die(mysqli_error($conn));
 
-        //se ci sono risultati mando alla pagina dei risultati
-        if(mysqli_num_rows($ris)>0){
+    //     //se ci sono risultati mando alla pagina dei risultati
+    //     if(mysqli_num_rows($ris)>0){
             
-            header("Location: risultati_viaggi.php");
-            mysqli_free_result($ris);
-            mysqli_close($conn);
-            exit;
+    //         header("Location: risultati_viaggi.php");
+    //         mysqli_free_result($ris);
+    //         mysqli_close($conn);
+    //         exit;
 
-        } else $errore="Non ci sono viaggi con i parametri selezionati";
+    //     } else $errore="Non ci sono viaggi con i parametri selezionati";
 
-    } else if(!empty($_POST["partenza"]) || !empty($_POST["destinazione"])){
-        $errore="Tutti i campi devono essere compilati";
-    }
+    // } else if (isset($_POST["partenza"]) || isset($_POST["destinazione"])){
+    //     $errore="Tutti i campi devono essere compilati";
+    // }
 
 ?>
 
@@ -135,30 +134,26 @@
             </p>
         
 
+        <div id="ricerca_viaggi">
+            <form id="form_viaggio" method="post">
+                <div>
+                <input class="input_viaggi" id="input_partenza" type="text" name="partenza" placeholder="PARTENZA">
+                <input class="input_viaggi" id="input_destinazione" type="text" name="destinazione" placeholder="DESTINAZIONE">
+                <input class="submit" type="reset" name="reset" value="RICOMINCIA">
+                <input class="submit" type="submit" name="submit" value="TROVA">
+                </div>
 
-        <form action="risultati_viaggi.php" id="form_viaggio" method="post">
-            <div>
-            <input class="input_viaggi" type="text" name="partenza" placeholder="PARTENZA">
-            <input class="input_viaggi" type="text" name="destinazione" placeholder="DESTINAZIONE">
-            <!-- <input type="date" name="data_partenza"> -->
-            <input class="submit" type="reset" name="reset" value="RICOMINCIA">
-            <input class="submit" type="submit" name="submit" value="TROVA">
-            </div>
+            </form>
+            <div id="risultati_viaggi"></div>
+        </div>
 
-        </form>
-
-        <?php
-        if(isset($errore)){
-            echo "<div class='errore'> $errore</div>";
-        }
-        ?>
    
-        <section id="comunicato">
+        <div id="comunicato">
             <h1>COMUNICATO</h1>
             <p>I biglietti relativi ai servizi regionali (TPL) non sono acquistabili online, contatta le nostre biglietterie.<br>
                 Prima di procedere all'acquisto dei biglietti, leggere le condizioni d'acquisto.</p>
     
-        </section>
+    </div>
 
     </section>
 
@@ -230,15 +225,17 @@
         
     </section>
 
+
+    
     <section class="sezione_api">
     <!-- form api meteo -->
     <h1 class="titolo_api">Controlla il meteo della tua destinazione</h1>
 
 
-    <form class="form_api" id="search_content" name ='search_content'>
+    <form class="form_api" id="form_meteo" name ="form_meteo">
 			
         <div>
-        <label class="label_api">Inserisci la città: <input class="input_api" id="content" type='text' name = 'content'></label>	
+        <label class="label_api">Inserisci la città: <input class="input_api" id="input_meteo" type="text" name = "input_meteo"></label>	
         </div>
         <input class="submit" type='submit'>
                 

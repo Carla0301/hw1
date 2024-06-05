@@ -133,14 +133,15 @@ body{
 	}
 }
 
-h1{
-    text-align: center;
-    color:mediumblue;
-    margin-top: 4.5em;
-}
 
 .testo_redirect{
     text-align: center;
     color:darkslategray;
     font-size: 1.3em;
+}
+
+.titolo_viaggi{
+    text-align: center;
+    color:mediumblue;
+    margin-top: 4.5em;
 }
